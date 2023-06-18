@@ -24,7 +24,7 @@ print("\nзадание №3\n")
 var k: Int = 9
 
 for i in 10 ... 50 where i % 2 != 0 {
-    if k % 2 == 0 {
+    if (k + i) % 2 == 0 {
         k += 2
         print(k)
     } else {
@@ -40,7 +40,7 @@ print("\nзадание №4\n")
 k = 9
 
 for i in 10 ... 50 where i % 2 != 0 {
-    if k % 2 == 0 {
+    if (k + i) % 2 == 0 {
         k += 1
         print(k)
     } else {
