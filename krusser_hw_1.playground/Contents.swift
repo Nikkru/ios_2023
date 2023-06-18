@@ -45,7 +45,7 @@ for i in 10 ... 50 where i % 2 != 0 {
         print(k)
     } else {
         print("Next")
-        continue
+        break
     }
 }
 
