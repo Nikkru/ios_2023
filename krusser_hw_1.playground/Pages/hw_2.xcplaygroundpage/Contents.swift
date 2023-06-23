@@ -6,7 +6,8 @@ func getMoney(deposit: Double, interest: Double, period: Int) -> Double {
     
     var sum = deposit
     
-    guard period != 0 else {
+// проверка на срок размещения депозита менее года
+    guard period > 0 else {
         return deposit
     }
     
@@ -17,7 +18,7 @@ func getMoney(deposit: Double, interest: Double, period: Int) -> Double {
     return sum
 }
 
-let sum = getMoney(deposit: 100.0, interest: 10.0, period: 3)
+let sum = getMoney(deposit: 100.0, interest: 10.0, period: -1)
 
 
 // 2. Создать перечисление, которое содержит 3 вида пиццы и создать переменные с каждым видом пиццы.
