@@ -11,18 +11,23 @@ import Foundation
 enum Tea: String {
     case green = "Grean tea"
     case black = "Black tea"
+    case white
     
     func getColor() -> String {
         self.rawValue
     }
 }
 
-func getTea(tea: Tea) -> String {
-    tea.rawValue
+func getTea(tea: Tea?) {
+    guard let tea = tea else {
+        print("No this position!")
+        return
+    }
+    print(tea.rawValue)
 }
 
 print(Tea.black.getColor())
 
-print(getTea(tea: .green))
+getTea(tea: .white)
 
 //: [Next](@next)
