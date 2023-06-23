@@ -6,9 +6,12 @@ import Foundation
 func getMoney(deposit: Double, interest: Double, period: Int) -> Double {
     
     var sum = deposit
+    guard period != 0 else {
+        return deposit
+    }
     for i in 1 ... period {
         sum += sum / 100 * interest
-        print("in \(i) year your would get \(sum) coins")
+        print("in \(i) the deposit would up to \(sum) coins")
     }
     return sum
 //     deposit / 100 * interest * period + deposit
