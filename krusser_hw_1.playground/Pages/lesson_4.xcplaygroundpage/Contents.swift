@@ -18,6 +18,15 @@ enum CoffeeSize {
         default:       self = .m
         }
     }
+    
+    init?(newSize: String) {
+        switch newSize {
+        case "small":  self = .s
+        case "medium": self = .m
+        case "large":  self = .l
+        default:       return nil
+        }
+    }
 }
 
 struct Coffee {
@@ -48,7 +57,40 @@ struct Coffee {
     }
 }
 let size = CoffeeSize(size: "large")
+let sizeTwo = CoffeeSize(size: "medium")
+let lSize = CoffeeSize(newSize: "ls")
+print(lSize)
 var latte = Coffee(name: "Latte", isSugar: true, isIce: false, size: size)
 latte.cost = 150
 latte.getCoffee()
 latte.changeName(name: "FriLatte")
+var cappuchino = Coffee(name: "Cappuchino", isSugar: true, isIce: false, size: .l)
+
+
+class Cafe {
+    private var coffee: [Coffee] = []
+    
+    init(coffee: [Coffee]) {
+            self.coffee = coffee
+    }
+    
+    
+    convenience init() {
+        let latteM = Coffee(name: "Latte-M", isSugar: true, isIce:
+false, size: .l)
+        let mocciato = Coffee(name: "Mocciato", isSugar:
+false, isIce: false, size: .m)
+        self.init(coffee: [latteM, mocciato])
+}
+
+    func addCoffee(coffee: Coffee) {
+        self.coffee.append(coffee)
+    }
+}
+
+var cafe = Cafe(coffee: [latte, cappuchino])
+var newCafe = Cafe()
+
+
+
+
