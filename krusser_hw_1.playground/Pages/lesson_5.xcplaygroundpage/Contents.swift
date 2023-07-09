@@ -7,6 +7,10 @@ protocol CafeProtocol {
     init(coffee: [Coffee])
 }
 
+protocol CakeProtocol {
+    func addCake(cake: Cake)
+}
+
 enum CoffeeSize {
     case s
     case m
@@ -29,6 +33,11 @@ enum CoffeeSize {
         default:       return nil
         }
     }
+}
+
+struct Cake {
+    var name: String
+    var cost: Double
 }
 
 struct Coffee {
@@ -125,3 +134,23 @@ for oneCafe in cafe {
 firstCafe.coffee = [espresso]
 print(cafeOne.coffee)
 
+extension FirstCafe: CakeProtocol {
+    
+    struct Tea {
+        var name: String
+        var cost: Double
+    }
+    
+    var cafeName: String {
+        "Cafe Name"
+    }
+    func addCake(cake: Cake) {
+        print(cake)
+    }
+}
+
+extension CafeProtocol {
+    func addCoffee(coffee: Coffee) {
+        print(coffee.name)
+    }
+}
