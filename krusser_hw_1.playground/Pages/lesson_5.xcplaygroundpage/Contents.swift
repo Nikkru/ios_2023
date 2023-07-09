@@ -1,8 +1,10 @@
 import Foundation
 
 protocol CafeProtocol {
-    var coffee: [Coffee] { get set }
+    var coffee: [Coffee] { get }
     func addCoffee(coffee: Coffee)
+    
+    init(coffee: [Coffee])
 }
 
 enum CoffeeSize {
@@ -59,7 +61,7 @@ struct Coffee {
 
 class Cafe: CafeProtocol {
     var coffee: [Coffee]
-    init(coffee: [Coffee]) {
+    required init(coffee: [Coffee]) {
         self.coffee = coffee
     }
     convenience init() {
@@ -80,7 +82,7 @@ class Cafe: CafeProtocol {
 
 class FirstCafe: CafeProtocol {
     var coffee: [Coffee]
-    init(coffee: [Coffee]) {
+    required init(coffee: [Coffee]) {
         self.coffee = coffee
     }
     convenience init() {
