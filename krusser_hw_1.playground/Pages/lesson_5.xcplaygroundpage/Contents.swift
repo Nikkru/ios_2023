@@ -1,6 +1,7 @@
 import Foundation
 
 protocol CafeProtocol {
+    var coffee: [Coffee] { get set }
     func addCoffee(coffee: Coffee)
 }
 
@@ -57,7 +58,7 @@ struct Coffee {
 }
 
 class Cafe: CafeProtocol {
-    private var coffee: [Coffee]
+    var coffee: [Coffee]
     init(coffee: [Coffee]) {
         self.coffee = coffee
     }
@@ -78,7 +79,7 @@ class Cafe: CafeProtocol {
 }
 
 class FirstCafe: CafeProtocol {
-    private var coffee: [Coffee]
+    var coffee: [Coffee]
     init(coffee: [Coffee]) {
         self.coffee = coffee
     }
@@ -118,4 +119,7 @@ for oneCafe in cafe {
 
 // Объявление переменных в протоколе
 
+//var firstCafe: CafeProtocol = FirstCafe()
+firstCafe.coffee = [espresso]
+print(cafeOne.coffee)
 
