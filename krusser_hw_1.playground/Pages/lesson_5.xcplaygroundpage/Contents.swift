@@ -111,6 +111,8 @@ class FirstCafe: CafeProtocol {
     }
 }
 
+class SecondCafe: Cafe {}
+
 let espresso = Coffee(name: "Espresso",
                       isSugar: true,
                       isIce: false,
@@ -119,10 +121,13 @@ let espresso = Coffee(name: "Espresso",
 
 let firstCafe = FirstCafe()
 var cafeOne = Cafe()
+let secondCafe = SecondCafe()
+
+
 //cafeOne.addCoffee(coffee: espresso)
 //firstCafe.addCoffee(coffee: espresso)
 
-var cafe: [CafeProtocol] = [cafeOne, firstCafe]
+var cafe: [CafeProtocol] = [cafeOne, firstCafe, secondCafe]
 
 for oneCafe in cafe {
     oneCafe.addCoffee(coffee: espresso)
