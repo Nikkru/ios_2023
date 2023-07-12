@@ -25,8 +25,6 @@ enum Tea: String {
     case black
     case green
     case fruit
-    
-    
 }
 
 struct TeaCost {
@@ -57,8 +55,6 @@ class Cafe {
     }
     
     func printCostTea(type: Tea, sale: Int) -> Double? {
-//        guard tea.contains(type) else {
-//        }
         for teaType in tea {
             if teaType.name == type {
                 return teaType.getCost(discount: sale)
