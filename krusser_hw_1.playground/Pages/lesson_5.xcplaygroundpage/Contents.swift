@@ -74,14 +74,14 @@ class Cafe: CafeProtocol {
         self.coffee = coffee
     }
     convenience init() {
-        let latte = Coffee(name: "Latte",
+        let latte = Coffee(name:    "Latte",
                            isSugar: true,
-                           isIce: false,
-                           size: .l)
-        let cappuccino = Coffee(name: "Cappuccino",
+                           isIce:   false,
+                           size:    .l)
+        let cappuccino = Coffee(name:    "Cappuccino",
                                 isSugar: false,
-                                isIce: false,
-                                size: .m)
+                                isIce:   false,
+                                size:    .m)
         self.init(coffee: [latte, cappuccino])
     }
     func addCoffee(coffee: Coffee) {

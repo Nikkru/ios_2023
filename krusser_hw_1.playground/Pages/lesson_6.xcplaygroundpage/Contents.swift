@@ -60,14 +60,17 @@ class Cafe: CafeProtocol {
     var menu: [MenuProtocol]
     
     var coffee: [Coffee]
-    var tea: [Tea]
-    var name: String
+    var tea:    [Tea]
+    var name:   String
     
-    required init(menu: [MenuProtocol], coffee: [Coffee], tea: [Tea], name: String) {
-        self.menu = menu
+    required init(menu:   [MenuProtocol],
+                  coffee: [Coffee],
+                  tea:    [Tea],
+                  name:   String) {
+        self.menu   = menu
         self.coffee = coffee
-        self.tea = tea
-        self.name = name
+        self.tea    = tea
+        self.name   = name
         
         print("Инициализация")
     }
@@ -115,16 +118,16 @@ class Cafe: CafeProtocol {
         })
         return ["tea": tea, "coffee": coffee]
     }
-    func getCost() -> [String: [Double]] {
-        let menu = getMenu()
-        var finalCost: [String: [Double]] = [:]
-        
-        menu.forEach { a in
-            let cost = a.value.first?.cost
-            finalCost.updateValue(cost, forKey: a.key)
-        }
-        return finalCost
-    }
+//    func getCost() -> [String: [Double]] {
+//        let menu = getMenu()
+//        var finalCost: [String: [Double]] = [:]
+//        
+//        menu.forEach { a in
+//            let cost = a.value.first?.cost
+//            finalCost.updateValue(cost, forKey: a.key)
+//        }
+//        return finalCost
+//    }
 }
 
 class Name {
